@@ -21,22 +21,25 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chalkboard" translatesAutoresizingMaskIntoConstraints="NO" id="50t-DR-6vY" userLabel="ChalkBg">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EgC-kM-sCM" userLabel="PlayBtn">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EgC-kM-sCM" userLabel="PlayBtn">
                                 <rect key="frame" x="195" y="378" width="206" height="202"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="202" id="n9j-h6-due"/>
                                     <constraint firstAttribute="width" constant="206" id="rpF-i8-2dV"/>
                                 </constraints>
                                 <state key="normal" image="play"/>
+                                <connections>
+                                    <action selector="onPlayBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qKu-p8-O3c"/>
+                                </connections>
                             </button>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MULTIPLES" translatesAutoresizingMaskIntoConstraints="NO" id="5G9-gt-ldl" userLabel="Logo">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MULTIPLES" translatesAutoresizingMaskIntoConstraints="NO" id="5G9-gt-ldl" userLabel="Logo">
                                 <rect key="frame" x="123" y="44" width="354" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="5Ry-z4-xLw"/>
                                     <constraint firstAttribute="width" constant="354" id="pUv-ZG-KCb"/>
                                 </constraints>
                             </imageView>
-                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What multiple to add by?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aip-jw-8LL" userLabel="MultipleTxtField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What multiple to add by?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aip-jw-8LL" userLabel="MultipleTxtField">
                                 <rect key="frame" x="163" y="321" width="274" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="275" id="4j3-TN-fAF"/>
@@ -53,15 +56,18 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XP0-bX-KDv">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XP0-bX-KDv" userLabel="addBtn">
                                 <rect key="frame" x="159" y="404" width="279" height="134"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="279" id="KJb-SV-W34"/>
                                     <constraint firstAttribute="height" constant="134" id="RkH-qw-myW"/>
                                 </constraints>
                                 <state key="normal" image="add"/>
+                                <connections>
+                                    <action selector="onAddBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SVZ-a7-Vxq"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Press Add to add!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7UF-kb-E7q">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Press Add to add!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7UF-kb-E7q">
                                 <rect key="frame" x="125" y="100" width="350" height="65"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="39"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -98,6 +104,13 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="addBtn" destination="XP0-bX-KDv" id="kEr-Bd-WKZ"/>
+                        <outlet property="logoImg" destination="5G9-gt-ldl" id="DRH-lq-J0S"/>
+                        <outlet property="multiplesTxt" destination="aip-jw-8LL" id="9xK-bK-D7f"/>
+                        <outlet property="playBtn" destination="EgC-kM-sCM" id="6yj-Ef-XUT"/>
+                        <outlet property="resultLbl" destination="7UF-kb-E7q" id="Uf5-cn-vE1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
